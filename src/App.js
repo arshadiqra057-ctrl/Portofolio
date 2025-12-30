@@ -1,32 +1,35 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './Home.jsx';
-import Project from './Project.jsx';
-import Services from './Services.jsx';
-import Contact from './Contact.jsx';
-import About from './About.jsx';
-import Nav from './Nav.jsx'; 
-import Footer from "./Footer/Footer.jsx";
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Nav from './Nav';
+import Home from './Home';
+import About from './About';
+import Compliance from './Compliance';
+import Support from './Support';
+import Login from './Login';
+import Signup from './Signup';
+import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
-  return (
-      
-    <Router>
-      <Nav />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/footer" element={<Footer />}/>
-      </Routes>
-        <Footer/>  
-    </Router>
-    
-  );
+    return (
+        <Router>
+            <div className="App">
+                <ScrollToTop />
+                <Nav />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/compliance" element={<Compliance />} />
+                    <Route path="/support" element={<Support />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
+
